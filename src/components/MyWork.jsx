@@ -44,12 +44,10 @@ const MyWork = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Heading */}
         <div className="text-center mb-16">
-          <span className="text-cyan-400 font-semibold uppercase tracking-widest">
-            Portfolio
-          </span>
+          
 
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
-            Before & After
+            My Work
           </h2>
 
           <p className="text-slate-400 mt-4">
