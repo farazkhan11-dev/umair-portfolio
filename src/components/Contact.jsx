@@ -25,8 +25,6 @@ const ContactInfo = [
   },
 ];
 
-
-
 const Contact = () => {
   const form = useRef();
   const [status, setStatus] = useState(null); // null | "sending" | "sent" | "error"
@@ -53,17 +51,17 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-slate-950 py-24 relative overflow-hidden">
-      {/* Background glows */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400/4 rounded-full blur-3xl pointer-events-none" />
+    <section id="contact" className="bg-[#060911] text-white py-24 relative overflow-hidden">
+      {/* Background Glass Lighting Effects */}
+      <div className="absolute top-1/4 right-10 w-[550px] h-[550px] bg-[#1d4ed8]/15 rounded-full blur-[180px] pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-[#0284c7]/15 rounded-full blur-[160px] pointer-events-none" />
 
-      {/* Decorative grid lines */}
+      {/* Subtle Glass Pattern Overlay */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #22d3ee 1px, transparent 1px), linear-gradient(to bottom, #22d3ee 1px, transparent 1px)",
+            "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
       />
@@ -72,14 +70,21 @@ const Contact = () => {
 
         {/* Section Header */}
         <div className="text-center mb-16">
-          <span className="text-cyan-400 font-semibold uppercase tracking-widest text-sm">
+          <span 
+            className="inline-block bg-gradient-to-b from-white/15 to-white/5 backdrop-blur-xl border border-white/20 px-5 py-1.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-4"
+            style={{
+              boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.3), 0 4px 15px rgba(0,0,0,0.3)"
+            }}
+          >
             Get In Touch
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mt-2 tracking-tight">
             Let's Work{" "}
-            <span className="text-cyan-400">Together</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+              Together
+            </span>
           </h2>
-          <p className="text-slate-400 mt-4 max-w-xl mx-auto">
+          <p className="text-slate-300 mt-4 max-w-xl mx-auto text-base sm:text-lg">
             Have a project in mind? Reach out and let's create something
             incredible together.
           </p>
@@ -90,47 +95,55 @@ const Contact = () => {
           {/* Left — Contact Info */}
           <div className="space-y-8">
 
-            {/* Tagline */}
-            <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 relative overflow-hidden">
-              <div className="absolute top-0 left-6 right-6 h-px bg-gradient-to- from-transparent via-cyan-500/40 to-transparent" />
+            {/* Glass Tagline Card */}
+            <div 
+              className="bg-gradient-to-b from-white/15 via-white/5 to-transparent backdrop-blur-3xl border border-white/20 rounded-[32px] p-8 relative overflow-hidden"
+              style={{
+                boxShadow: "inset 0 1px 2px 0 rgba(255, 255, 255, 0.4), inset 0 -1px 2px 0 rgba(0, 0, 0, 0.5), 0 20px 50px rgba(0,0,0,0.6)"
+              }}
+            >
+              <div className="absolute top-0 left-6 right-6 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
-              <h3 className="text-white text-2xl font-bold mb-3">
+              <h3 className="text-white text-2xl font-bold mb-3 tracking-wide">
                 Ready to elevate your content?
               </h3>
-              <p className="text-slate-400 leading-relaxed">
+              <p className="text-slate-300 leading-relaxed font-light">
                 Whether it's a YouTube video, a short-form reel, a brand
                 commercial, or a cinematic project — I'm here to bring your
                 vision to life. Let's talk about what you need.
               </p>
 
               <div className="mt-6 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span className="text-cyan-400 text-sm font-medium">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_10px_#22d3ee]" />
+                <span className="text-cyan-400 text-sm font-medium tracking-wide">
                   Available for new projects
                 </span>
               </div>
             </div>
 
-            {/* Contact Details */}
+            {/* Glass Contact Details Buttons */}
             <div className="space-y-4">
               {ContactInfo.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="flex items-center gap-5 bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-2xl px-6 py-5 group transition-all duration-300"
+                  className="flex items-center gap-5 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/20 hover:border-cyan-400/50 rounded-2xl px-6 py-5 group transition-all duration-300"
+                  style={{
+                    boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.3), 0 10px 20px rgba(0,0,0,0.4)"
+                  }}
                 >
-                  <div className="w-11 h-11 rounded-xl bg-slate-800 border border-slate-700 group-hover:border-cyan-500/50 group-hover:bg-cyan-500/10 flex items-center justify-center text-cyan-400 transition-all duration-300 flex-shrink-">
+                  <div className="w-11 h-11 rounded-xl bg-white/10 border border-white/20 group-hover:border-cyan-400/50 group-hover:bg-cyan-400/10 flex items-center justify-center text-cyan-400 transition-all duration-300 flex-shrink-0 backdrop-blur-md">
                     {item.icon}
                   </div>
                   <div>
-                    <p className="text-slate-500 text-xs uppercase tracking-wider mb-0.5">
+                    <p className="text-slate-400 text-xs uppercase tracking-wider mb-0.5">
                       {item.label}
                     </p>
-                    <p className="text-white font-medium group-hover:text-cyan-400 transition-colors duration-300">
+                    <p className="text-white font-medium group-hover:text-cyan-300 transition-colors duration-300">
                       {item.value}
                     </p>
                   </div>
-                  <div className="ml-auto text-slate-700 group-hover:text-cyan-500 transition-colors duration-300">
+                  <div className="ml-auto text-slate-400 group-hover:text-cyan-400 transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
                       <path d="M7 17L17 7M17 7H7M17 7v10" />
                     </svg>
@@ -141,23 +154,33 @@ const Contact = () => {
 
           </div>
 
-          {/* Right — Contact Form */}
-          <div className="bg-slate-900 border border-slate-800 rounded-3xl p-8 md:p-10 relative">
-            <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to- from-transparent via-cyan-500/40 to-transparent" />
+          {/* Right — Liquid Glass Contact Form */}
+          <div 
+            className="bg-gradient-to-b from-white/15 via-white/5 to-transparent backdrop-blur-3xl border border-white/20 rounded-[32px] p-8 md:p-10 relative"
+            style={{
+              boxShadow: "inset 0 1px 2px 0 rgba(255, 255, 255, 0.4), inset 0 -1px 2px 0 rgba(0, 0, 0, 0.5), 0 20px 50px rgba(0,0,0,0.6)"
+            }}
+          >
+            <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent" />
 
-            <h3 className="text-white text-xl font-bold mb-7">
+            <h3 className="text-white text-xl font-bold mb-7 tracking-wide">
               Send a Message
             </h3>
 
             {status === "sent" ? (
               <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
-                <div className="w-16 h-16 rounded-full bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center">
+                <div 
+                  className="w-16 h-16 rounded-full bg-cyan-400/10 border border-cyan-400/40 flex items-center justify-center backdrop-blur-xl"
+                  style={{
+                    boxShadow: "0 0 20px rgba(34, 211, 238, 0.2)"
+                  }}
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 text-cyan-400">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
                 <p className="text-white text-xl font-bold">Message Sent!</p>
-                <p className="text-slate-400">
+                <p className="text-slate-300">
                   Thanks for reaching out. I'll get back to you soon.
                 </p>
                 <button
@@ -171,7 +194,7 @@ const Contact = () => {
               <form ref={form} onSubmit={sendEmail} className="space-y-5">
                 {/* Name */}
                 <div>
-                  <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">
+                  <label className="block text-slate-300 text-xs uppercase tracking-wider mb-2 font-medium">
                     Your Name
                   </label>
                   <input
@@ -179,13 +202,16 @@ const Contact = () => {
                     name="name"
                     placeholder="Enter your name"
                     required
-                    className="w-full bg-slate-800 border border-slate-700 focus:border-cyan-500 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 outline-none transition-colors duration-200 text-sm"
+                    className="w-full bg-white/5 border border-white/15 focus:border-cyan-400/80 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-400 outline-none transition-all duration-300 text-sm backdrop-blur-md"
+                    style={{
+                      boxShadow: "inset 0 1px 2px rgba(0,0,0,0.2)"
+                    }}
                   />
                 </div>
 
                 {/* Email */}
                 <div>
-                  <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">
+                  <label className="block text-slate-300 text-xs uppercase tracking-wider mb-2 font-medium">
                     Email Address
                   </label>
                   <input
@@ -193,13 +219,16 @@ const Contact = () => {
                     name="email"
                     placeholder="user@example.com"
                     required
-                    className="w-full bg-slate-800 border border-slate-700 focus:border-cyan-500 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 outline-none transition-colors duration-200 text-sm"
+                    className="w-full bg-white/5 border border-white/15 focus:border-cyan-400/80 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-400 outline-none transition-all duration-300 text-sm backdrop-blur-md"
+                    style={{
+                      boxShadow: "inset 0 1px 2px rgba(0,0,0,0.2)"
+                    }}
                   />
                 </div>
 
                 {/* Message */}
                 <div>
-                  <label className="block text-slate-400 text-xs uppercase tracking-wider mb-2">
+                  <label className="block text-slate-300 text-xs uppercase tracking-wider mb-2 font-medium">
                     Message
                   </label>
                   <textarea
@@ -207,7 +236,10 @@ const Contact = () => {
                     placeholder="Tell me about your project..."
                     rows={5}
                     required
-                    className="w-full bg-slate-800 border border-slate-700 focus:border-cyan-500 rounded-xl px-4 py-3.5 text-white placeholder-slate-600 outline-none transition-colors duration-200 text-sm resize-none"
+                    className="w-full bg-white/5 border border-white/15 focus:border-cyan-400/80 focus:bg-white/10 rounded-xl px-4 py-3.5 text-white placeholder-slate-400 outline-none transition-all duration-300 text-sm resize-none backdrop-blur-md"
+                    style={{
+                      boxShadow: "inset 0 1px 2px rgba(0,0,0,0.2)"
+                    }}
                   />
                 </div>
 
@@ -218,11 +250,14 @@ const Contact = () => {
                   </p>
                 )}
 
-                {/* Submit */}
+                {/* Submit Pill Button */}
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full py-4 rounded-xl bg-cyan-500 hover:bg-cyan-400 disabled:bg-cyan-800 disabled:cursor-not-allowed text-white font-semibold text-sm tracking-wide transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full py-4 rounded-full bg-white text-black hover:bg-slate-200 disabled:bg-slate-700 disabled:text-slate-400 disabled:cursor-not-allowed font-semibold text-sm tracking-wide transition-all duration-300 flex items-center justify-center gap-2"
+                  style={{
+                    boxShadow: status === "sending" ? "none" : "0 0 25px rgba(255, 255, 255, 0.25)"
+                  }}
                 >
                   {status === "sending" ? (
                     <>

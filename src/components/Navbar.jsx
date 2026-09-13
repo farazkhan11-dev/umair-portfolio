@@ -1,131 +1,146 @@
 import React, { useState } from "react";
 
 const Navbar = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const closeMenu = () => setMenuOpen(false);
+  const closeMenu = () => setMenuOpen(false);
 
-    return (
-        <nav className="fixed top-0 left-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50">
-            <div className="max-w-7xl mx-auto px-6 lg:px-12">
-                <div className="flex items-center justify-between h-16">
-                    {/* Logo */}
-                    <a
-                        href="#home"
-                        className="text-2xl font-bold text-white tracking-wide"
-                        onClick={closeMenu}
-                    >
-                        Muhammad Umair
-                    </a>
+  return (
+    <header className="fixed top-5 left-0 w-full z-50 px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto flex items-center justify-between">
+        
+        {/* Brand / Logo */}
+        <a
+          href="#home"
+          className="text-xl md:text-2xl font-bold text-white tracking-wide hover:opacity-90 transition"
+          onClick={closeMenu}
+        >
+          Muhammad Umair
+        </a>
 
-                    {/* Nav Links - Desktop */}
-                    <ul className="hidden md:flex items-center gap-8">
-                        <li>
-                            <a href="#home" className="text-slate-300 hover:text-cyan-400 transition">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#about" className="text-slate-300 hover:text-cyan-400 transition">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#mywork" className="text-slate-300 hover:text-cyan-400 transition">
-                                My Work
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact" className="text-slate-300 hover:text-cyan-400 transition">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-
-                    {/* CTA Button - Desktop */}
-                    <a
-                        href="#contact"
-                        className="hidden md:block bg-black hover:bg-cyan-950 text-white px-5 py-2 rounded-full font-medium transition"
-                    >
-                        Hire Me
-                    </a>
-
-                    {/* Mobile Menu Button */}
-                    <button
-                        className="md:hidden text-white focus:outline-none"
-                        onClick={() => setMenuOpen(!menuOpen)}
-                    >
-                        {menuOpen ? (
-                            // X icon when open
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        ) : (
-                            // Hamburger icon when closed
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        )}
-                    </button>
-                </div>
-            </div>
-
-            {/* Mobile Menu Dropdown */}
-            <div
-                className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-                    menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                }`}
-            >
-                <ul className="flex flex-col bg-slate-900 border-t border-slate-800 px-6 py-4 gap-4">
-                    <li>
-                        <a
-                            href="#home"
-                            onClick={closeMenu}
-                            className="block text-slate-300 hover:text-cyan-400 transition py-2 border-b border-slate-800"
-                        >
-                            Home
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#about"
-                            onClick={closeMenu}
-                            className="block text-slate-300 hover:text-cyan-400 transition py-2 border-b border-slate-800"
-                        >
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#mywork"
-                            onClick={closeMenu}
-                            className="block text-slate-300 hover:text-cyan-400 transition py-2 border-b border-slate-800"
-                        >
-                            My Work
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#contact"
-                            onClick={closeMenu}
-                            className="block text-slate-300 hover:text-cyan-400 transition py-2 border-b border-slate-800"
-                        >
-                            Contact
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="#contact"
-                            onClick={closeMenu}
-                            className="block text-center bg-cyan-500 hover:bg-cyan-400 text-white px-5 py-2 rounded-full font-medium transition mt-2"
-                        >
-                            Hire Me
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        {/* Center Floating Glass Pill Navbar (Desktop) */}
+        <nav 
+          className="hidden md:flex items-center gap-1 bg-gradient-to-b from-white/15 via-white/5 to-transparent backdrop-blur-2xl border border-white/20 px-3 py-1.5 rounded-full"
+          style={{
+            boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.4), 0 10px 30px rgba(0, 0, 0, 0.5)"
+          }}
+        >
+          <a
+            href="#home"
+            className="text-slate-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full text-sm font-medium transition"
+          >
+            Home
+          </a>
+          <a
+            href="#about"
+            className="text-slate-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full text-sm font-medium transition"
+          >
+            About
+          </a>
+          <a
+            href="#mywork"
+            className="text-slate-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full text-sm font-medium transition"
+          >
+            My Work
+          </a>
+          <a
+            href="#contact"
+            className="text-slate-300 hover:text-white hover:bg-white/10 px-4 py-2 rounded-full text-sm font-medium transition"
+          >
+            Contact
+          </a>
         </nav>
-    );
+
+        {/* CTA Button (Liquid White Pill Style) */}
+        <div className="hidden md:block">
+          <a
+            href="#contact"
+              className="px-8 py-3.5 bg-gradient-to-b from-white/15 to-white/5 backdrop-blur-2xl border border-white/20 text-white hover:bg-white/10 rounded-full font-semibold transition-all duration-300"
+          >
+            Hire Me
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden text-white p-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile Menu Dropdown (Liquid Glass Card Style) */}
+      <div
+        className={`md:hidden transition-all duration-300 ease-in-out overflow-hidden mt-3 ${
+          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div 
+          className="bg-gradient-to-b from-white/15 to-white/5 backdrop-blur-3xl border border-white/20 rounded-3xl p-5 shadow-2xl max-w-sm mx-auto"
+          style={{
+            boxShadow: "inset 0 1px 1px 0 rgba(255, 255, 255, 0.3), 0 20px 40px rgba(0,0,0,0.6)"
+          }}
+        >
+          <ul className="flex flex-col gap-2 text-center">
+            <li>
+              <a
+                href="#home"
+                onClick={closeMenu}
+                className="block text-slate-200 hover:bg-white/10 py-2.5 rounded-xl transition"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                onClick={closeMenu}
+                className="block text-slate-200 hover:bg-white/10 py-2.5 rounded-xl transition"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#mywork"
+                onClick={closeMenu}
+                className="block text-slate-200 hover:bg-white/10 py-2.5 rounded-xl transition"
+              >
+                My Work
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                onClick={closeMenu}
+                className="block text-slate-200 hover:bg-white/10 py-2.5 rounded-xl transition"
+              >
+                Contact
+              </a>
+            </li>
+            <li className="pt-2">
+              <a
+                href="#contact"
+                onClick={closeMenu}
+                className="block bg-white text-black font-semibold py-2.5 rounded-full transition"
+              >
+                Hire Me
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Navbar;
